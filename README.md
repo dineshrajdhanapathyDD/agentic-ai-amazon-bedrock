@@ -1,6 +1,6 @@
 # Agentic AI Workshop - Weather Assistant Agent
 
-![Weather Agent Demo](../images/Screenshot%202026-03-01%20003014.png)
+<!--![Weather Agent Demo](../images/Screenshot%202026-03-01%20003014.png)-->
 
 ## Overview
 
@@ -30,8 +30,8 @@ Our weather assistant exhibits the three key characteristics of agentic AI:
 
 ## Architecture
 
-![Architecture Flow](../images/Screenshot%202026-02-28%20234629.png)
-
+<!--![Architecture Flow](../images/Screenshot%202026-02-28%20234629.png)
+-->
 The agent follows a 6-step workflow:
 
 1. **User Input** → Location name or description
@@ -44,42 +44,52 @@ The agent follows a 6-step workflow:
 ## Features
 
 ### Command Line Interface
-![CLI Demo](../images/Screenshot%202026-03-01%20005830.png)
-
+<!--![CLI Demo](../images/Screenshot%202026-03-01%20005830.png)
+-->
 - Direct, focused interaction
 - Step-by-step workflow visualization
 - Great for automation and scripting
 - Perfect for developers
 
 ### Web Interface
-![Web Interface](../images/Screenshot%202026-03-01%20002742.png)
-
+<!--![Web Interface](../images/Screenshot%202026-03-01%20002742.png)
+-->
 - Interactive, visual experience
 - Real-time progress indicators
 - Professional presentation
 - User-friendly for non-technical users
 
-![Web Interface Steps](../images/Screenshot%202026-03-01%20003114.png)
-
+<!--![Web Interface Steps](../images/Screenshot%202026-03-01%20003114.png)
+-->
 ## Installation
 
 ### Prerequisites
 - Python 3.7+
+- Git installed on your system
 - AWS account with Bedrock access
 - AWS CLI configured
 - Claude 4.5 Sonnet enabled in Amazon Bedrock
 
 ### Setup
 
-1. **Clone or download the project files**
+1. **Clone the repository from GitHub**
    ```bash
+   git clone https://github.com/yourusername/agentic-ai-workshop.git
    cd agentic-ai-workshop
    ```
 
 2. **Create virtual environment**
    ```bash
    python -m venv .venv
-   source .venv/bin/activate  # On Windows: .venv\Scripts\activate
+   
+   # On Windows (PowerShell)
+   .venv\Scripts\Activate.ps1
+   
+   # On Windows (CMD)
+   .venv\Scripts\activate.bat
+   
+   # On macOS/Linux
+   source .venv/bin/activate
    ```
 
 3. **Install dependencies**
@@ -88,16 +98,37 @@ The agent follows a 6-step workflow:
    ```
 
 4. **Configure AWS credentials**
+   
+   If you haven't configured AWS CLI yet:
    ```bash
    aws configure
+   ```
+   
+   You'll be prompted to enter:
+   - AWS Access Key ID
+   - AWS Secret Access Key
+   - Default region name (e.g., us-east-1)
+   - Default output format (json)
+
+5. **Enable Claude 4.5 Sonnet in Amazon Bedrock**
+   - Go to AWS Console → Amazon Bedrock
+   - Navigate to Model access
+   - Request access to Claude 4.5 Sonnet if not already enabled
+   - Wait for approval (usually instant for most accounts)
+
+6. **Verify installation**
+   ```bash
+   python --version
+   pip list
+   aws bedrock list-foundation-models --region us-east-1
    ```
 
 ## Usage
 
 ### Command Line Version
 
-![CLI Usage](../images/Screenshot%202026-03-01%20005931.png)
-
+<!--![CLI Usage](../images/Screenshot%202026-03-01%20005931.png)
+-->
 ```bash
 python weather_agent_cli.py
 ```
@@ -110,8 +141,8 @@ Enter locations like:
 
 ### Web Interface
 
-![Web Interface Launch](../images/Screenshot%202026-03-01%20010113.png)
-
+<!--![Web Interface Launch](../images/Screenshot%202026-03-01%20010113.png)
+-->
 ```bash
 streamlit run weather_agent_web.py
 ```
@@ -131,8 +162,8 @@ The agent can understand various location formats:
 - **Complex Descriptions**: "National park near Homestead in Florida"
 
 ### API Call Generation
-![API Generation](../images/Screenshot%202026-03-01%20003246.png)
-
+<!--![API Generation](../images/Screenshot%202026-03-01%20003246.png)
+-->
 The AI automatically generates the correct National Weather Service API calls:
 ```
 https://api.weather.gov/points/47.6062,-122.3321  # For Seattle
@@ -140,8 +171,8 @@ https://api.weather.gov/points/34.0901,-118.4065  # For 90210 (Beverly Hills)
 ```
 
 ### Weather Data Processing
-![Data Processing](../images/Screenshot%202026-03-01%20003359.png)
-
+<!--![Data Processing](../images/Screenshot%202026-03-01%20003359.png)
+-->
 The agent converts complex JSON weather data into human-readable forecasts with:
 - Current conditions
 - Multi-day outlook
@@ -207,7 +238,7 @@ After completing this workshop, you will understand:
 ✅ **User Interface Design** - CLI vs web interface considerations
 
 
-
+<!--
 ### Setup and Configuration
 ![Setup](../images/Screenshot%202026-02-28%20234716.png)
 
@@ -219,7 +250,7 @@ After completing this workshop, you will understand:
 
 ### Results Display
 ![Results](../images/Screenshot%202026-03-01%20010250.png)
-
+-->
 ## Next Steps
 
 ### Immediate Extensions
@@ -247,13 +278,45 @@ After completing this workshop, you will understand:
 - [National Weather Service API](https://www.weather.gov/documentation/services-web-api)
 - [Streamlit Documentation](https://docs.streamlit.io/)
 
-## Contributing
+## Do It Yourself
 
-This project is designed for educational purposes. Feel free to:
-- Extend functionality with additional APIs
-- Improve error handling and user experience
-- Add new interface options
-- Enhance the AI prompts for better performance
+This project is designed for hands-on learning. Here are ways you can extend and customize it:
+
+### Extend Functionality
+- **Add More APIs** - Integrate international weather services, air quality data, or UV index
+- **Multi-Location Support** - Compare weather across multiple cities simultaneously
+- **Historical Data** - Add weather history and trend analysis
+- **Weather Alerts** - Implement severe weather notifications
+
+### Improve User Experience
+- **Better Error Handling** - Add retry logic and more informative error messages
+- **Caching** - Store recent queries to reduce API calls
+- **Voice Interface** - Add speech input/output capabilities
+- **Mobile App** - Create a mobile version using React Native or Flutter
+
+### Enhance AI Capabilities
+- **Improve Prompts** - Refine prompts for better accuracy and performance
+- **Add Memory** - Store conversation history and learn user preferences
+- **Personalization** - Customize responses based on user activity preferences
+- **Multi-Language** - Support weather queries in different languages
+
+### Add Visualizations
+- **Weather Maps** - Display interactive weather maps
+- **Charts & Graphs** - Show temperature trends and precipitation forecasts
+- **Icons & Animations** - Add weather condition icons and animations
+- **Dark Mode** - Implement theme switching
+
+### Advanced Features
+- **Multi-Agent System** - Create specialized agents for different weather aspects
+- **Database Integration** - Store and analyze weather patterns over time
+- **API Rate Limiting** - Implement smart request throttling
+- **Testing Suite** - Add unit tests and integration tests
+
+### Deployment Options
+- **AWS Lambda** - Deploy as serverless function
+- **Docker Container** - Containerize for easy deployment
+- **Cloud Hosting** - Deploy to AWS, Azure, or Google Cloud
+- **CI/CD Pipeline** - Automate testing and deployment
 
 ## License
 
